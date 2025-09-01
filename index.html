@@ -27,6 +27,13 @@
       justify-content: center;
       text-align: center;
       background: linear-gradient(135deg, #1a1a1a, #000);
+      position: relative;
+    }
+    header .logo {
+      font-size: 4rem;
+      color: #ff4da6;
+      margin-bottom: 20px;
+      animation: bounce 2s infinite;
     }
     header h1 {
       font-size: 3rem;
@@ -109,10 +116,16 @@
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-15px); }
+      60% { transform: translateY(-8px); }
+    }
   </style>
 </head>
 <body>
   <header>
+    <div class="logo"><i class="fa-solid fa-code"></i></div>
     <h1>Hi, I'm Rachana Kiran</h1>
     <p>Python & Cloud Enthusiast | Aspiring Cloud Engineer</p>
     <div class="links">
