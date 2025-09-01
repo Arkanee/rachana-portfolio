@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rachana Kiran | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * {
       margin: 0;
@@ -69,21 +70,30 @@
       margin-bottom: 20px;
       color: #ff4da6;
     }
-    .projects {
+    .projects, .skills {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
       margin-top: 40px;
     }
-    .project-card {
+    .project-card, .skill-card {
       background: #1a1a1a;
       padding: 20px;
       border-radius: 15px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .project-card:hover {
+    .project-card:hover, .skill-card:hover {
       transform: translateY(-10px);
       box-shadow: 0px 8px 20px rgba(255, 77, 166, 0.3);
+    }
+    .project-card h3, .skill-card h3 {
+      color: #ff4da6;
+      margin-bottom: 0.5rem;
+    }
+    .icon {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #ff4da6;
     }
     footer {
       text-align: center;
@@ -106,9 +116,9 @@
     <h1>Hi, I'm Rachana Kiran</h1>
     <p>Python & Cloud Enthusiast | Aspiring Cloud Engineer</p>
     <div class="links">
-      <a href="mailto:rachnakiran999@gmail.com">Email</a>
-      <a href="https://github.com/arkanee" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/rachana-kiran-268282215" target="_blank">LinkedIn</a>
+      <a href="mailto:rachnakiran999@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+      <a href="https://github.com/arkanee" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+      <a href="https://www.linkedin.com/in/rachana-kiran-268282215" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
     </div>
   </header>
 
@@ -121,22 +131,37 @@
     <h2>Projects</h2>
     <div class="projects">
       <div class="project-card">
+        <i class="fa-brands fa-aws icon"></i>
         <h3>Django Cloud App</h3>
         <p>A Django project hosted on AWS EC2 with Git-based deployments.</p>
       </div>
       <div class="project-card">
+        <i class="fa-brands fa-python icon"></i>
         <h3>Python Utilities</h3>
         <p>Collection of Python scripts automating everyday tasks and workflows.</p>
       </div>
       <div class="project-card">
+        <i class="fa-solid fa-cloud icon"></i>
         <h3>Cloud Portfolio</h3>
         <p>Starter portfolio to showcase my skills, projects, and career growth.</p>
       </div>
     </div>
   </section>
 
+  <section>
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill-card"><i class="fa-brands fa-python icon"></i><h3>Python</h3></div>
+      <div class="skill-card"><i class="fa-brands fa-django icon"></i><h3>Django</h3></div>
+      <div class="skill-card"><i class="fa-brands fa-aws icon"></i><h3>AWS EC2</h3></div>
+      <div class="skill-card"><i class="fa-brands fa-git-alt icon"></i><h3>Git / GitHub</h3></div>
+      <div class="skill-card"><i class="fa-solid fa-code-branch icon"></i><h3>CI/CD</h3></div>
+      <div class="skill-card"><i class="fa-solid fa-shield-halved icon"></i><h3>Cloud Security Basics</h3></div>
+    </div>
+  </section>
+
   <footer>
-    <p>© 2025 Rachana Kiran | Built with ❤️ and Python mindset</p>
+    <p>© 2025 Rachana Kiran | Built with ❤️ and Tech</p>
   </footer>
 </body>
 </html>
