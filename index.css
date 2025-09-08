@@ -1,0 +1,15 @@
+.logo-bubble{
+  width:96px;height:96px;border-radius:18px;
+  display:inline-grid;place-items:center;
+  margin:0 auto 22px auto;
+  box-shadow:0 12px 40px rgba(255,77,154,0.12);
+  background:linear-gradient(135deg,#ff4da6,#ff77b5);
+  transform:translateY(-6px);
+  animation:logoFloat 3s ease-in-out infinite;
+}
+.logo-bubble svg{width:72px;height:72px;display:block}
+@keyframes logoFloat{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-10px) rotate(-1deg)}
+  100%{transform:translateY(0)}
+}
