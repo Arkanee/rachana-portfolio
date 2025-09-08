@@ -1,235 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Rachana Kiran — Python & Cloud</title>
+<!-- Option A: SVG tech mark -->
+<div class="logo-bubble fade-up stagger-1" aria-hidden="true">
+  <!-- custom SVG combining cloud + code brackets -->
+  <svg width="72" height="72" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <linearGradient id="g1" x1="0" x2="1">
+        <stop offset="0" stop-color="#ff4da6"/>
+        <stop offset="1" stop-color="#ff77b5"/>
+      </linearGradient>
+      <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="6" result="b"/>
+        <feBlend in="SourceGraphic" in2="b"/>
+      </filter>
+    </defs>
 
-  <!-- Google font + Font Awesome for icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- rounded square background -->
+    <rect x="4" y="4" width="56" height="56" rx="12" fill="url(#g1)" filter="url(#blur)"/>
+    <!-- cloud shape -->
+    <g transform="translate(8,10)">
+      <path d="M22 14c-0.6-3.5-3.6-6-7.2-6-2.3 0-4.4 1.1-5.7 2.8C6.4 11 4 12 4 14c0 2 1.8 3.5 4 3.5h14c1.1 0 2-0.9 2-2 0-0.6-0.2-1.1-0.4-1.5z" fill="#fff" opacity="0.95"/>
+    </g>
 
-  <style>
-    :root{
-      --bg:#08080a;
-      --surface:#0f1113;
-      --muted:#9aa1a8;
-      --accent:#ff4da6;
-      --accent-2:#00d1ff;
-      --glass: rgba(255,77,154,0.06);
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;color:#fff;background:linear-gradient(180deg,var(--bg),#040405);-webkit-font-smoothing:antialiased;}
-    a{color:inherit}
-
-    /* Layout */
-    .container{max-width:1100px;margin:0 auto;padding:0 20px}
-    header.hero{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      position:relative;
-      text-align:center;
-      padding:40px 20px;
-      background:
-        radial-gradient(800px 400px at 10% 20%, rgba(255,77,166,0.05), transparent 6%),
-        radial-gradient(600px 300px at 90% 80%, rgba(0,209,255,0.03), transparent 6%),
-        linear-gradient(180deg,#070708 0%, #050507 100%);
-    }
-
-    /* logo bubble */
-    .logo-bubble{
-      width:96px;height:96px;border-radius:24px;
-      background:linear-gradient(135deg,var(--accent),#ff7abf);
-      display:inline-grid;place-items:center;
-      box-shadow:0 8px 30px rgba(255,77,154,0.14);
-      transform:translateY(-6px);
-      margin:0 auto 22px auto;
-      animation:logoFloat 3s ease-in-out infinite;
-    }
-    .logo-bubble i{font-size:40px;color:#fff}
-
-    @keyframes logoFloat{
-      0%{transform:translateY(0)}
-      50%{transform:translateY(-10px) rotate(-2deg)}
-      100%{transform:translateY(0)}
-    }
-
-    h1{
-      font-size:2.4rem;
-      margin:0 0 8px 0;
-      letter-spacing:-0.4px;
-      color:linear-gradient(90deg,#fff,#fff);
-    }
-    h1 .accent{color:var(--accent)}
-    p.lead{color:var(--muted);margin:0 auto 22px auto;max-width:720px;font-size:1.05rem}
-
-    .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px}
-    .btn{
-      display:inline-flex;align-items:center;gap:10px;
-      background:transparent;border:1px solid rgba(255,255,255,0.08);
-      padding:10px 16px;border-radius:999px;color:#fff;text-decoration:none;font-weight:600;
-      backdrop-filter: blur(6px);
-      transition:all .25s ease;
-    }
-    .btn:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(0,0,0,0.6)}
-    .btn.accent{background:linear-gradient(90deg,var(--accent),#ff77b5);border:0;color:#08080a}
-    .btn.ghost{border:1px solid rgba(255,77,154,0.16);color:var(--accent)}
-
-    /* social icons under hero */
-    .socials{display:flex;gap:12px;justify-content:center;margin-top:18px}
-    .socials a{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:10px;background:var(--glass);color:var(--accent);text-decoration:none;border:1px solid rgba(255,255,255,0.03)}
-    .socials a:hover{transform:translateY(-6px);box-shadow:0 8px 18px rgba(255,77,154,0.08)}
-
-    /* content sections */
-    section{padding:80px 20px}
-    .section-title{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:30px}
-    .section-title h2{color:var(--accent);margin:0;font-size:1.6rem}
-    .section-sub{color:var(--muted);font-size:0.98rem;margin-top:8px}
-
-    /* projects */
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-    .card{
-      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border:1px solid rgba(255,255,255,0.03);
-      padding:20px;border-radius:14px;transition:transform .28s ease, box-shadow .28s ease;
-    }
-    .card:hover{transform:translateY(-10px);box-shadow:0 20px 60px rgba(0,0,0,0.6), 0 6px 18px rgba(255,77,154,0.06)}
-    .card .kicker{font-size:12px;color:var(--muted);margin-bottom:8px}
-    .card h3{margin:0 0 8px 0;color:#fff}
-    .card p{color:var(--muted);font-size:0.95rem}
-
-    /* tech icons row */
-    .tech-row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
-    .tech{
-      display:inline-flex;gap:10px;align-items:center;background:transparent;border-radius:10px;padding:10px 12px;border:1px solid rgba(255,255,255,0.03);
-      color:var(--muted);font-weight:600;font-size:0.95rem;
-    }
-    .tech i{font-size:20px;color:var(--accent);margin-right:8px}
-
-    /* contact area */
-    .contact-center{text-align:center}
-    .resume-btn{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:999px;background:linear-gradient(90deg,var(--accent),#ff77b5);color:#08080a;text-decoration:none;font-weight:700}
-
-    /* footer */
-    footer{padding:36px 20px;text-align:center;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02)}
-
-    /* responsive */
-    @media (max-width:640px){
-      h1{font-size:1.9rem}
-      .logo-bubble{width:76px;height:76px}
-    }
-
-    /* entrance animations */
-    .fade-up{animation:fadeUp .9s ease both}
-    .stagger-1{animation-delay:.12s}
-    .stagger-2{animation-delay:.24s}
-    .stagger-3{animation-delay:.36s}
-    @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-  </style>
-</head>
-<body>
-
-  <!-- HERO -->
-  <header class="hero">
-    <div class="container">
-      <div class="logo-bubble fade-up stagger-1" aria-hidden="true">
-        <!-- small custom SVG-like icon for tech (code + cloud) -->
-        <i class="fa-solid fa-cloud-code" style="font-size:40px;"></i>
-      </div>
-
-      <h1 class="fade-up stagger-2">Rachana <span class="accent">Kiran</span></h1>
-      <p class="lead fade-up stagger-3">Python Developer • Django & AWS • Building cloud-native apps and clean backend systems</p>
-
-      <div class="cta-row fade-up stagger-3" style="margin-top:22px">
-        <a class="btn accent" href="/resume.pdf" target="_blank" rel="noopener">📄 Resume</a>
-        <a class="btn ghost" href="#projects">See Projects</a>
-        <a class="btn" href="mailto:rachnakiran999@gmail.com">✉️ Email Me</a>
-      </div>
-
-      <div class="socials fade-up stagger-3" style="margin-top:18px">
-        <a title="GitHub" href="https://github.com/arkanee" target="_blank" rel="noopener">
-          <i class="fa-brands fa-github" aria-hidden="true"></i>
-        </a>
-        <a title="LinkedIn" href="https://www.linkedin.com/in/rachana-kiran-268282215" target="_blank" rel="noopener">
-          <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-        </a>
-        <a title="Email" href="mailto:rachnakiran999@gmail.com">
-          <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <!-- ABOUT -->
-  <section id="about" class="container">
-    <div class="section-title">
-      <h2>About</h2>
-    </div>
-    <p class="section-sub">I build backend systems and cloud-deployed Django apps. I enjoy bringing structure to complex systems using Python, automating deployments, and learning better cloud practices.</p>
-
-    <div style="height:20px"></div>
-
-    <div class="tech-row" aria-hidden="true">
-      <div class="tech"><i class="fa-brands fa-python"></i> Python</div>
-      <div class="tech"><i class="fa-brands fa-docker"></i> Docker</div>
-      <div class="tech"><i class="fa-brands fa-aws"></i> AWS</div>
-      <div class="tech"><i class="fa-brands fa-git-alt"></i> Git</div>
-      <div class="tech"><i class="fa-solid fa-server"></i> Linux</div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects" class="container">
-    <div class="section-title">
-      <h2>Projects</h2>
-    </div>
-
-    <div class="grid">
-      <article class="card">
-        <div class="kicker">Production</div>
-        <h3>Django Cloud App</h3>
-        <p>Full-stack Django app deployed on AWS EC2 with Gunicorn + Nginx, environment-managed secrets, and Git-based deployments. (CI/CD pipelines optional)</p>
-        <p style="margin-top:12px"><a href="https://github.com/arkanee" target="_blank" rel="noopener" class="btn" style="padding:8px 12px;font-size:0.95rem">View on GitHub</a></p>
-      </article>
-
-      <article class="card">
-        <div class="kicker">Tooling</div>
-        <h3>Python Utilities</h3>
-        <p>Utilities to move hard-coded secrets to environment variables, scripts to automate deployment tasks, and small automation tools for productivity.</p>
-        <p style="margin-top:12px"><a href="https://github.com/arkanee" target="_blank" rel="noopener" class="btn" style="padding:8px 12px;font-size:0.95rem">View on GitHub</a></p>
-      </article>
-
-      <article class="card">
-        <div class="kicker">Portfolio</div>
-        <h3>Cloud Portfolio</h3>
-        <p>A starter portfolio demonstrating my projects, skills, and links — designed to be hosted on GitHub Pages or any static host.</p>
-        <p style="margin-top:12px"><a href="#contact" class="btn" style="padding:8px 12px;font-size:0.95rem">Contact Me</a></p>
-      </article>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="container" style="text-align:center">
-    <div class="section-title">
-      <h2>Contact</h2>
-    </div>
-    <p class="section-sub">Feel free to reach out — open to dev roles, freelance work, and collaboration.</p>
-
-    <div style="height:18px"></div>
-
-    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-      <a class="resume-btn" href="/resume.pdf" target="_blank" rel="noopener">📄 Download Resume</a>
-      <a class="btn" href="mailto:rachnakiran999@gmail.com">✉️ Email</a>
-      <a class="btn" href="https://github.com/arkanee" target="_blank" rel="noopener">💻 GitHub</a>
-      <a class="btn" href="https://www.linkedin.com/in/rachana-kiran-268282215" target="_blank" rel="noopener">🔗 LinkedIn</a>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">© 2025 Rachana Kiran · Built with Python mindset</div>
-  </footer>
-
-</body>
-</html>
+    <!-- small code bracket -->
+    <g transform="translate(34,24)">
+      <path d="M8 0 L4 6 L8 12" stroke="#08080a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <path d="M0 0 L4 6 L0 12" stroke="#08080a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </g>
+  </svg>
+</div>
