@@ -1,56 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Rachana Kiran — Python & Cloud</title>
-
-  <!-- Google Fonts & Font Awesome -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <!-- Custom CSS -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rachana Kiran — Python & Cloud Developer</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-
-  <!-- HERO -->
+  <!-- Hero Section -->
   <header class="hero">
     <div class="container">
       <div class="logo-bubble fade-up stagger-1" aria-hidden="true">
-        <!-- Custom SVG tech logo -->
-        <svg width="72" height="72" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <defs>
-            <linearGradient id="g1" x1="0" x2="1">
-              <stop offset="0" stop-color="#ff4da6"/>
-              <stop offset="1" stop-color="#ff77b5"/>
-            </linearGradient>
-            <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur stdDeviation="6" result="b"/>
-              <feBlend in="SourceGraphic" in2="b"/>
-            </filter>
-          </defs>
-          <rect x="4" y="4" width="56" height="56" rx="12" fill="url(#g1)" filter="url(#blur)"/>
-          <g transform="translate(8,10)">
-            <path d="M22 14c-0.6-3.5-3.6-6-7.2-6-2.3 0-4.4 1.1-5.7 2.8C6.4 11 4 12 4 14c0 2 1.8 3.5 4 3.5h14c1.1 0 2-0.9 2-2 0-0.6-0.2-1.1-0.4-1.5z" fill="#fff" opacity="0.95"/>
-          </g>
-          <g transform="translate(34,24)">
-            <path d="M8 0 L4 6 L8 12" stroke="#08080a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            <path d="M0 0 L4 6 L0 12" stroke="#08080a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          </g>
-        </svg>
+        <i class="fa-brands fa-python"></i>
+      </div>
+      <h1 class="fade-up stagger-2">Rachana <span>Kiran</span></h1>
+      <p class="tagline fade-up stagger-3">Python Developer • Django & AWS • Building cloud-native apps and backend systems</p>
+
+      <div class="buttons fade-up stagger-4">
+        <a href="resume.pdf" class="btn primary">📄 Resume</a>
+        <a href="#projects" class="btn secondary">See Projects</a>
+        <a href="mailto:rachnakiran999@gmail.com" class="btn secondary">✉️ Email Me</a>
       </div>
 
-      <h1 class="fade-up stagger-2">Rachana <span class="accent">Kiran</span></h1>
-      <p class="lead fade-up stagger-3">Python Developer • Django & AWS • Building cloud-native apps and clean backend systems</p>
-
-      <div class="cta-row fade-up stagger-3">
-        <a class="btn accent" href="resume.pdf" target="_blank">📄 Resume</a>
-        <a class="btn ghost" href="#projects">See Projects</a>
-        <a class="btn" href="mailto:rachnakiran999@gmail.com">✉️ Email Me</a>
-      </div>
-
-      <div class="socials fade-up stagger-3">
+      <div class="socials fade-up stagger-5">
         <a href="https://github.com/arkanee" target="_blank"><i class="fa-brands fa-github"></i></a>
         <a href="https://www.linkedin.com/in/rachana-kiran-268282215" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
         <a href="mailto:rachnakiran999@gmail.com"><i class="fa-solid fa-envelope"></i></a>
@@ -58,59 +32,44 @@
     </div>
   </header>
 
-  <!-- ABOUT -->
-  <section id="about" class="container">
-    <div class="section-title"><h2>About</h2></div>
-    <p class="section-sub">
-      I build backend systems and cloud-deployed Django apps. I enjoy bringing structure to complex systems using Python,
-      automating deployments, and learning better cloud practices.
-    </p>
-    <div class="tech-row">
-      <div class="tech"><i class="fa-brands fa-python"></i> Python</div>
-      <div class="tech"><i class="fa-brands fa-docker"></i> Docker</div>
-      <div class="tech"><i class="fa-brands fa-aws"></i> AWS</div>
-      <div class="tech"><i class="fa-brands fa-git-alt"></i> Git</div>
-      <div class="tech"><i class="fa-solid fa-server"></i> Linux</div>
+  <!-- About Section -->
+  <section class="about fade-up stagger-6">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>I build backend systems and cloud-deployed Django apps. I enjoy bringing structure to complex systems using Python,
+         automating deployments, and continuously learning better cloud practices.</p>
+      <ul class="skills">
+        <li><i class="fa-brands fa-python"></i> Python</li>
+        <li><i class="fa-brands fa-docker"></i> Docker</li>
+        <li><i class="fa-brands fa-aws"></i> AWS</li>
+        <li><i class="fa-brands fa-git-alt"></i> Git</li>
+        <li><i class="fa-brands fa-linux"></i> Linux</li>
+      </ul>
     </div>
   </section>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="container">
-    <div class="section-title"><h2>Projects</h2></div>
-    <div class="grid">
-      <article class="card">
-        <div class="kicker">Production</div>
+  <!-- Projects Section -->
+  <section class="projects fade-up stagger-7" id="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="project-card">
         <h3>Django Cloud App</h3>
-        <p>Full-stack Django app deployed on AWS EC2 with Gunicorn + Nginx, environment-managed secrets, and Git-based deployments.</p>
-      </article>
-      <article class="card">
-        <div class="kicker">Tooling</div>
+        <p>A Django app hosted on AWS EC2 with environment-managed secrets and Git-based version control.</p>
+      </div>
+      <div class="project-card">
+        <h3>Study Center Seat Management</h3>
+        <p>A Django system to manage seat allocation efficiently for students in study centers.</p>
+      </div>
+      <div class="project-card">
         <h3>Python Utilities</h3>
-        <p>Utilities to move hard-coded secrets to environment variables, scripts to automate deployment tasks, and productivity tools.</p>
-      </article>
-      <article class="card">
-        <div class="kicker">Portfolio</div>
-        <h3>Cloud Portfolio</h3>
-        <p>A starter portfolio demonstrating my projects, skills, and links — designed to be hosted on GitHub Pages.</p>
-      </article>
+        <p>Utilities to replace hard-coded keys with environment variables and small automation scripts for productivity.</p>
+      </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="container contact-center">
-    <div class="section-title"><h2>Contact</h2></div>
-    <p class="section-sub">Open to development roles, freelance work, and collaborations.</p>
-    <div class="cta-row">
-      <a class="resume-btn" href="resume.pdf" target="_blank">📄 Download Resume</a>
-      <a class="btn" href="mailto:rachnakiran999@gmail.com">✉️ Email</a>
-      <a class="btn" href="https://github.com/arkanee" target="_blank">💻 GitHub</a>
-      <a class="btn" href="https://www.linkedin.com/in/rachana-kiran-268282215" target="_blank">🔗 LinkedIn</a>
-    </div>
-  </section>
-
+  <!-- Footer -->
   <footer>
-    <div class="container">© 2025 Rachana Kiran · Built with ❤️ and Python mindset</div>
+    <p>© 2025 Rachana Kiran • Portfolio</p>
   </footer>
-
 </body>
 </html>
